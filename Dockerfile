@@ -7,6 +7,13 @@ WORKDIR /workspace
 # Install git so we can clone the GitHub repository
 RUN apt-get update && apt-get install -y git
 
+# Clone the repository containing the requirements files
+RUN git clone https://github.com/leandromugnaini/ml-env-setup.git
+
+# Choose which requirements file to use, e.g., basic, gpu, or advanced
+# You can switch this filename depending on your needs
+COPY ml-env-setup/requirements_test.txt ./requirements.txt
+
 # Install Python pip
 RUN set -xe \
     && apt-get update -y \
