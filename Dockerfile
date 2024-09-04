@@ -21,12 +21,3 @@ RUN set -xe \
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Expose port 8888 for Jupyter
-EXPOSE 8888
-
-# Install Jupyter Notebook and other dependencies
-RUN pip install jupyter
-
-# Start the Jupyter Notebook server
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
