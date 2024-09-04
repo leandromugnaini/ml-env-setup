@@ -1,8 +1,8 @@
 # Use an official Python runtime as a parent image
-FROM nvidia/cuda:12.1.0-cudnn8-devel-ubuntu20.04
+FROM nvidia/cuda:12.6.0-cudnn-devel-ubuntu22.04
 
 # Set the working directory in the container
-WORKDIR /workspace
+WORKDIR /app
 
 # Install git so we can clone the GitHub repository
 RUN apt-get update && apt-get install -y git
