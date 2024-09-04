@@ -7,6 +7,11 @@ WORKDIR /workspace
 # Install git so we can clone the GitHub repository
 RUN apt-get update && apt-get install -y git
 
+# Install Python pip
+RUN set -xe \
+    && apt-get update -y \
+    && apt-get install -y python3-pip
+
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements_test.txt
 
