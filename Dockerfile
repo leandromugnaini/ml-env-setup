@@ -12,7 +12,7 @@ RUN git clone https://github.com/leandromugnaini/ml-env-setup.git
 
 # Choose which requirements file to use, e.g., basic, gpu, or advanced
 # You can switch this filename depending on your needs
-COPY ml-env-setup/requirements_test.txt ./requirements.txt
+RUN cp ml-env-setup/requirements_test.txt ./requirements.txt
 
 # Install Python pip
 RUN set -xe \
@@ -20,7 +20,7 @@ RUN set -xe \
     && apt-get install -y python3-pip
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements_test.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose port 8888 for Jupyter
 EXPOSE 8888
